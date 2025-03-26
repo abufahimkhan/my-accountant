@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;700&family=Dancing+Script:wght@400..700&family=Geist:wght@100..900&family=Cinzel&family=Libre+Caslon+Text&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 72.22% 50.59%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+body {
+  font-family: 'Geist', sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent var(--muted);
+}
+
+.scrollable_hidden {
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollable_hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.child_scroll {
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.auth_bg {
+  background-image: url('/login_bk.png');
+  background-color: rgb(0, 0, 0);
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-position: center;
+}
+
+.horizontal-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.custom-file-upload input[type='file'] {
+  display: none;
+}
+
+.custom-file-upload .custom-button::after {
+  content: ' ';
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.blank_input {
+  @apply border-0 focus:outline-none focus:ring-0 focus:border-0;
+}
+
+.remove-number-arrows::-webkit-inner-spin-button,
+.remove-number-arrows::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50 dark:bg-background; /* Light mode: slate-100, Dark mode: gray-900 */
+  }
+
+  label {
+    @apply h-6 relative inline-block;
+  }
+
+  [type='checkbox'] {
+    @apply w-11 h-0 cursor-pointer inline-block;
+    @apply focus:outline-0 dark:focus:outline-0;
+    @apply border-0 dark:border-0;
+    @apply focus:ring-offset-transparent dark:focus:ring-offset-transparent;
+    @apply focus:ring-transparent dark:focus:ring-transparent;
+    @apply focus-within:ring-0 dark:focus-within:ring-0;
+    @apply focus:shadow-none dark:focus:shadow-none;
+    @apply after:absolute before:absolute;
+    @apply after:top-0 before:top-0;
+    @apply after:block before:inline-block;
+    @apply before:rounded-full after:rounded-full;
+    @apply after:content-[''] after:w-5 after:h-5 after:mt-0.5 after:ml-0.5;
+    @apply after:shadow-md after:duration-100;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+
+.hideScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.hideScrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fade-in-left {
+  animation: fade-in-left 0.5s ease-out forwards;
+}
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fade-in-down {
+  animation: fade-in-down 0.5s ease-out forwards;
+}
+
+/* Thin Scrollbar Styling */
+.thin-scrollbar {
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 100, 100, 0.4) transparent;
+}
+
+/* For Webkit Browsers (Chrome, Edge, Safari) */
+.thin-scrollbar::-webkit-scrollbar {
+  width: 2px; /* Adjust thickness */
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Blend with UI */
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.4); /* Subtle color */
+  border-radius: 10px; /* Smooth edges */
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 100, 0.6); /* Slightly darker on hover */
+}

@@ -1,2 +1,9 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+    import DataTable from "$lib/components/accounts/DataTable.svelte";
+</script>
+
+<div
+    class="flex flex-1 w-full h-full mx-auto flex-col gap-4 p-4 md:gap-8 md:p-8"
+>
+    <DataTable />
+</div>
