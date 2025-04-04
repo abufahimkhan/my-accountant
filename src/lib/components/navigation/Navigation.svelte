@@ -14,11 +14,11 @@
     import { ModeWatcher, toggleMode } from "mode-watcher";
 
     const menuItems = [
-        "Dashboard",
-        "Orders",
-        "Products",
-        "Customers",
-        "Analytics",
+        { label: "Dashboard", href: "/dashboard" },
+        { label: "Daily Expences", href: "/daily-expenses" },
+        { label: "Customer List", href: "/customer-list" },
+        { label: "Services", href: "/services" },
+        { label: "Analytics", href: "/analytics" },
     ];
 </script>
 
@@ -27,20 +27,22 @@
 >
     <nav class="hidden md:flex md:items-center md:gap-5 md:text-sm lg:gap-6">
         <a
-            href="##"
+            href="/"
             class="flex items-center gap-2 text-lg font-semibold md:text-base"
         >
             <Package2 class="h-6 w-6" />
-            <span class="sr-only">Acme Inc</span>
+            <span class="sr-only">Deploys Tech</span>
         </a>
         {#each menuItems as item}
             <a
-                href="##"
-                class="text-muted-foreground hover:text-foreground transition-colors"
-                >{item}</a
+                href={item.href}
+                class="text-muted-foreground hover:text-foreground transition-colors text-nowrap"
             >
+                {item.label}
+            </a>
         {/each}
     </nav>
+
     <Sheet.Root>
         <Sheet.Trigger asChild let:builder>
             <Button
@@ -56,18 +58,21 @@
         <Sheet.Content side="left">
             <nav class="grid gap-6 text-lg font-medium">
                 <a
-                    href="##"
+                    href="/"
                     class="flex items-center gap-2 text-lg font-semibold"
                 >
                     <Package2 class="h-6 w-6" />
                     <span class="sr-only">Acme Inc</span>
                 </a>
                 {#each menuItems as item}
-                    <a href="##" class="hover:text-foreground">{item}</a>
+                    <a href={item.href} class="hover:text-foreground">
+                        {item.label}
+                    </a>
                 {/each}
             </nav>
         </Sheet.Content>
     </Sheet.Root>
+
     <div class="flex w-full items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
         <form class="ml-auto flex-1 sm:flex-initial">
             <div class="relative">

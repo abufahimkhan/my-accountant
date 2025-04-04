@@ -8,11 +8,8 @@
         date: "",
         invoice: "",
         title: "",
-        description: "",
         provider: "",
-        paymentStatus: "",
         totalAmount: "",
-        paymentMethod: "",
     };
 
     function handleSubmit() {
@@ -22,7 +19,7 @@
 
 <Dialog.Root>
     <Dialog.Trigger
-        class="w-fit dark:text-white rounded-full text-sm font-bold bg-blue-500 px-3 py-1"
+        class="w-fit text-white rounded-full text-sm font-bold bg-blue-500 px-3 py-1"
     >
         Add Invoice
     </Dialog.Trigger>
@@ -72,36 +69,12 @@
                     />
                 </div>
 
-                <div class="grid grid-cols-1 gap-2">
-                    <Label for="description" class="text-left"
-                        >Description</Label
-                    >
-                    <Input
-                        id="description"
-                        bind:value={invoiceData.description}
-                        class="w-full"
-                        required
-                    />
-                </div>
-            </div>
-
-            <!-- Provider and Status Fields Side by Side -->
-            <div class="grid grid-cols-2 gap-4">
+                <!-- Provider and Status Fields Side by Side -->
                 <div class="grid grid-cols-1 gap-2">
                     <Label for="provider" class="text-left">Provider</Label>
                     <Input
                         id="provider"
                         bind:value={invoiceData.provider}
-                        class="w-full"
-                        required
-                    />
-                </div>
-
-                <div class="grid grid-cols-1 gap-2">
-                    <Label for="paymentStatus" class="text-left">Status</Label>
-                    <Input
-                        id="paymentStatus"
-                        bind:value={invoiceData.paymentStatus}
                         class="w-full"
                         required
                     />
@@ -122,20 +95,10 @@
                         required
                     />
                 </div>
-
-                <div class="grid grid-cols-1 gap-2">
-                    <Label for="paymentMethod" class="text-left">Method</Label>
-                    <Input
-                        id="paymentMethod"
-                        bind:value={invoiceData.paymentMethod}
-                        class="w-full"
-                        required
-                    />
-                </div>
             </div>
 
             <Dialog.Footer>
-                <Button type="submit">Save Invoice</Button>
+                <Button type="submit" class="text-white">Save Invoice</Button>
             </Dialog.Footer>
         </form>
     </Dialog.Content>

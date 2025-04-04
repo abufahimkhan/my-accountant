@@ -2,15 +2,9 @@
     import * as Table from "$lib/components/ui/table/index.js";
     import { Printer } from "@lucide/svelte";
     import { Pencil, RefreshCw, Trash2 } from "lucide-svelte";
-    import Button from "../ui/button/button.svelte";
-    import TableCardWrapper from "./TableCardWrapper.svelte";
-    // Lucide Icons
-    import { buttonVariants } from "$lib/components/ui/button/index.js";
-    import * as Dialog from "$lib/components/ui/dialog/index.js";
-    import { Input } from "$lib/components/ui/input/index.js";
-    import { Label } from "$lib/components/ui/label/index.js";
+    import DashboardModal from "../common/DashboardModal.svelte";
     import DtTooltop from "../common/DTTooltop.svelte";
-    import DtModal from "../common/DTModal.svelte";
+    import TableCardWrapper from "./TableCardWrapper.svelte";
     const invoices = [
         {
             date: "2024-03-25",
@@ -100,9 +94,9 @@
         .toFixed(2);
 </script>
 
-<TableCardWrapper>
+<TableCardWrapper title="VISA TEA" description="Total Expense List">
     <div class="flex flex-col gap-5">
-       <DtModal/>
+        <DashboardModal />
         <!-- Scrollable Table Wrapper -->
         <div class="overflow-x-auto max-h-[400px]">
             <Table.Root class="min-w-full">

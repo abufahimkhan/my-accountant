@@ -1,5 +1,5 @@
 <script lang="ts">
-    import DataTable from "$lib/components/accounts/DataTable.svelte";
+    import DataTable from "$lib/components/dashboard/DataTable.svelte";
 </script>
 
 <div

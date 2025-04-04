@@ -1,6 +1,5 @@
 <script lang="ts">
  import * as Tooltip from "$lib/components/ui/tooltip";
- export let label:string="";
  export let message:string="";
 </script>
  
